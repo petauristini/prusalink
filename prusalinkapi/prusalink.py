@@ -24,7 +24,7 @@ class PrusaLink:
 
         if response.status_code == 200:
             return response.json()
-        elif response.status_code == 401:
+        if response.status_code == 401:
             raise AuthError
 
     def __get_job(self):
@@ -39,7 +39,7 @@ class PrusaLink:
 
         if response.status_code == 200:
             return response.json()
-        elif response.status_code == 401:
+        if response.status_code == 401:
             raise AuthError
 
     def __get_preview(self):
@@ -56,7 +56,7 @@ class PrusaLink:
         if response.status_code == 200:
             preview_str = response.content
             return Image.open(BytesIO(preview_str))
-        elif response.status_code == 401:
+        if response.status_code == 401:
             raise AuthError
 
     @property
