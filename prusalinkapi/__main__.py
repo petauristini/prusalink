@@ -9,7 +9,7 @@ def main():
     printer = PrusaLink(args[0], args[1], args[2])
 
     try:
-        return getattr(printer, args[3])
+        print(getattr(printer, args[3]))
     except AttributeError as exc:
         raise AttributeError from exc
 
